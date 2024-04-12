@@ -39,6 +39,12 @@ const requestListener = function (req, res) {
             case '/about':
                 readFile('./static/templates/about.html', res);
                 break;
+            case '/chill':
+                readFile('./static/templates/chill.html', res);
+                break;
+            case '/tryhard':
+                readFile('./static/templates/tryhard.html', res);
+                break;
             default:
                 res.writeHead(404);
                 res.end('Err 404 : Page Not Found');
