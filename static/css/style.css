@@ -17,18 +17,19 @@ h2{
     text-align: center;
 }
 
-form input{
+button{
     background-color: #15F5BA;
     border : none;
     border-radius: 45px;
     height: 100px;
-    width: 200px;
+    width: auto;
+    padding: 10px 20px;
     margin: 50px;
     font-size: 30px;
     cursor: pointer;
 }
 
-.formElement{
+.homeButtons{
     display: flex;
     flex-direction: row;
     justify-content: center;
