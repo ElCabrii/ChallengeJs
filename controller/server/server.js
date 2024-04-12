@@ -5,12 +5,12 @@ const path = require('path');
 const hostname = '127.0.0.1';
 const port = 8080;
 
-const index = fs.readFileSync(path.join(__dirname, '/static/templates/index.html'));
-const about = fs.readFileSync(path.join(__dirname, '/static/templates/about.html'));
-const notfound = fs.readFileSync(path.join(__dirname, '/static/templates/notfound.html'));
+const index = fs.readFileSync(path.join(__dirname, '../../static/templates/index.html'));
+const about = fs.readFileSync(path.join(__dirname, '../../static/templates/about.html'));
+const notfound = fs.readFileSync(path.join(__dirname, '../../static/templates/notfound.html'));
 
 const requestListener = function (req, res) {
-    res.setHeader("Content-Type", "text/html");
+    res.setHeader("Content-Type", "text/templates");
     switch (req.url) {
         case "/":
             res.writeHead(200);
