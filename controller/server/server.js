@@ -1,36 +1,39 @@
 const http = require('http');
 const fs = require('fs');
-const path = require('path');
 
-const hostname = '127.0.0.1';
-const port = 8080;
+const PORT = 8080;
+const HOST = 'localhost'
 
-const index = fs.readFileSync(path.join(__dirname, '../../static/templates/index.html'));
-const about = fs.readFileSync(path.join(__dirname, '../../static/templates/about.html'));
-const notfound = fs.readFileSync(path.join(__dirname, '../../static/templates/notfound.html'));
+const readFile = function (path, res) {
+    fs.readFile(path, (err, data) => {
+        if (err) {
+            res.writeHead(500);
+            res.end(`Error loading template: ${err.message}`);
+        } else {
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.end(data);
+        }
+    });
+}
 
 const requestListener = function (req, res) {
-    res.setHeader("Content-Type", "text/templates");
     switch (req.url) {
-        case "/":
-            res.writeHead(200);
-            res.end(index);
+        case '/':
+            readFile('./static/templates/index.html', res);
             break;
-        case "/about":
-            res.writeHead(200);
-            res.end(about);
+        case '/about':
+            readFile('./static/templates/about.html', res);
             break;
         default:
             res.writeHead(404);
-            res.end(notfound);
+            res.end('Err 404 : Page Not Found');
     }
-};
+}
 
-//create a server object:
-const server = http.createServer((req, res) => {
+
+
+http.createServer((req, res) => {
     requestListener(req, res);
-});
-
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+}).listen(PORT, HOST, () => {
+    console.log(`Server running at http://${HOST}:${PORT}/`);
 });
