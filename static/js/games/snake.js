@@ -3,11 +3,18 @@ const context = canvas.getContext('2d');
 
 
 
-const HeadImage = new Image();
-HeadImage.src = '/static/img/snake.png';
+const HeadImageUp = new Image();
+HeadImageUp.src = '/static/img/snake_up.png';
+const HeadImageDown = new Image();
+HeadImageDown.src = '/static/img/snake_down.png';
+const HeadImageLeft = new Image();
+HeadImageLeft.src = '/static/img/snake_left.png';
+const HeadImageRight = new Image();
+HeadImageRight.src = '/static/img/snake_right.png';
 const BodyImage = new Image();
 BodyImage.src = '/static/img/body.png';
-
+const AppleImage = new Image();
+AppleImage.src = '/static/img/apple.png';
 
 
 let box = 20;
@@ -37,11 +44,28 @@ function direction(event) {
 function draw() {
     context.clearRect(0, 0, 400, 400);
     for (let i = 0; i < snake.length; i++) {
-        let img = (i === 0) ? HeadImage : BodyImage; // Utiliser l'image de la tête pour la première partie, le corps pour les autres
+        let img;
+        if (i === 0) { // Utiliser l'image de la tête pour la première partie
+            switch (d) {
+                case 'UP':
+                    img = HeadImageUp;
+                    break;
+                case 'DOWN':
+                    img = HeadImageDown;
+                    break;
+                case 'LEFT':
+                    img = HeadImageLeft;
+                    break;
+                case 'RIGHT':
+                    img = HeadImageRight;
+                    break;
+            }
+        } else { // le corps pour les autres
+            img = BodyImage;
+        }
         context.drawImage(img, snake[i].x, snake[i].y, box, box);
     }
-    context.fillStyle = "white";
-    context.fillRect(food.x, food.y, box, box);
+    context.drawImage(AppleImage, food.x, food.y, box, box);
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
