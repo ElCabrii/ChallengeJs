@@ -1,0 +1,27 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #F0F3FF;
+    margin: 0 auto;
+    width: 800px;
+    height: auto;
+    align-items: center;
+}
+
+#textInput{
+    background: transparent;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #F0F3FF;
+    width: 200px;
+    height: 40px;
+    outline: none;
+    color: #F0F3FF;
+    margin-bottom: 10px;
+}
+
+#textToType{
+    height: auto;
+    width: 750px;
+}
