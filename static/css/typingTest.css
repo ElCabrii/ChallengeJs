@@ -1,14 +1,19 @@
+body{
+    overflow: hidden;
+}
+
 #container{
     display: flex;
     flex-direction: column;
-    border: 2px solid #F0F3FF;
     margin: 0 auto;
     width: 800px;
-    height: auto;
+    height: 100px;
     align-items: center;
+    justify-content: center;
 }
 
 #textInput{
+    flex-direction: column;
     background: transparent;
     font-size: 20px;
     justify-content: center;
@@ -21,7 +26,16 @@
     margin-bottom: 10px;
 }
 
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #textToType{
-    height: auto;
-    width: 750px;
+    height: 30px;
+    color: #F0F3FF;
+    font-size: 20px;
+    white-space: nowrap;
+    width: 800px;
 }
