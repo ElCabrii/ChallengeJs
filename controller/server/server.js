@@ -8,7 +8,8 @@ const HOST = 'localhost';
 const mimeTypes = {
     '.html': 'text/html',
     '.css': 'text/css',
-    // add more MIME types based on the static files you'll be serving
+    '.ico': 'image/x-icon',
+    '.js': 'text/javascript',
 };
 
 const readFile = function (filePath, res) {
@@ -44,6 +45,12 @@ const requestListener = function (req, res) {
                 break;
             case '/tryhard':
                 readFile('./static/templates/tryhard.html', res);
+                break;
+            case '/reactiontime':
+                readFile('./static/templates/reactionTime.html', res);
+                break;
+            case '/typingtest':
+                readFile('./static/templates/typingTest.html', res);
                 break;
             default:
                 res.writeHead(404);

@@ -3,11 +3,11 @@
 
 
 body{
-    background: rgb(33,25,81);
     background: linear-gradient(90deg, rgba(33,25,81,1) 0%, rgba(9,9,121,1) 30%, rgba(21,245,186,1) 100%);
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    overflow-y: hidden;
 }
 
 h1{
@@ -24,11 +24,18 @@ h2{
     text-align: center;
 }
 
+p{
+    color : #F0F3FF;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
 button{
     background-color: #15F5BA;
     border-radius: 45px;
     height: 100px;
-    width: auto;
+    width: 200px;
     padding: 10px 20px;
     margin: 50px;
     font-size: 30px;
@@ -78,6 +85,7 @@ button:hover{
 .gameImg{
     width: 200px;
     height: 200px;
+    color: rgb(81, 255, 0);
 }
 
 .gameName{
