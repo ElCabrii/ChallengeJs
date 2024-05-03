@@ -36,7 +36,6 @@ async function renderTextToType(){
 async function game(){
     gameOver = false;
     textToType.innerText = "Loading...";
-    await renderTextToType();
     let time = 60;
     let words = textToType.innerText.split(' ');
     let i = 0;
@@ -56,6 +55,7 @@ async function game(){
             timer.innerText = time;
         }, 1000);
     }
+    await renderTextToType();
     textInput.addEventListener('input', () => {
         let inputWord = textInput.value;
         let wordToType = words[i] + ' ';
