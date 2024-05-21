@@ -29,6 +29,10 @@ app.get('/reactiontime', (req, res) => {
 app.get('/typingtest', (req, res) => {
     res.sendFile(__dirname + '/public/templates/typingTest.html')
 })
+app.get('/chillgames/snake', (req, res) => {
+    res.sendFile(__dirname + '/public/templates/snake.html')
+})
+
 
 app.use((req, res) => {
     res.status(404)

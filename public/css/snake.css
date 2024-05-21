@@ -1,0 +1,32 @@
+canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: 4px solid #F0F3FF;
+}
+
+.canvas-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+ p {
+     color: #F0F3FF;
+     font-size: 20px;
+     justify-content: center;
+     text-align: center;
+ }
+ body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#restart-button {
+    margin-top: 20px;
+}
