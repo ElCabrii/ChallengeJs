@@ -3,17 +3,17 @@ const context = canvas.getContext('2d');
 const displayScore = document.getElementById('score');
 
 const HeadImageUp = new Image();
-HeadImageUp.src = '/static/img/snake_up.png';
+HeadImageUp.src = '/img/snake/snake_up.png';
 const HeadImageDown = new Image();
-HeadImageDown.src = '/static/img/snake_down.png';
+HeadImageDown.src = '/img/snake/snake_down.png';
 const HeadImageLeft = new Image();
-HeadImageLeft.src = '/static/img/snake_left.png';
+HeadImageLeft.src = '/img/snake/snake_left.png';
 const HeadImageRight = new Image();
-HeadImageRight.src = '/static/img/snake_right.png';
+HeadImageRight.src = '/img/snake/snake_right.png';
 const BodyImage = new Image();
-BodyImage.src = '/static/img/body.png';
+BodyImage.src = '/img/snake/body.png';
 const AppleImage = new Image();
-AppleImage.src = '/static/img/apple.png';
+AppleImage.src = '/img/snake/apple.png';
 
 
 let box = 20;
@@ -57,6 +57,9 @@ function draw() {
                     break;
                 case 'RIGHT':
                     img = HeadImageRight;
+                    break;
+                default:
+                    img = HeadImageUp;
                     break;
             }
         } else {
