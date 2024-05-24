@@ -1,15 +1,11 @@
-body{
-    overflow: hidden;
-}
-
 #container{
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
     width: 800px;
     height: 100px;
     align-items: center;
     justify-content: center;
+    margin: 100px auto;
 }
 
 #textInput{
@@ -33,9 +29,19 @@ body{
 }
 
 #textToType{
+    width: 500px;
     height: 30px;
     color: #F0F3FF;
     font-size: 20px;
     white-space: nowrap;
-    width: 800px;
+    left: 0;
+    border: 1px solid;
+}
+
+#gameEnd{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
