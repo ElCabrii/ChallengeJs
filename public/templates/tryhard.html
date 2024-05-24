@@ -8,19 +8,25 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 <body>
-<h1>Tryhard Games</h1>
-<h2>Choose a game to play</h2>
-<div class="gamesContainer">
-    <div class="game">
-        <h3>Typing Test</h3>
-        <img src="/img/typingtest.png" alt="TypingTest" class="gameImg">
-        <button onclick="window.location.href='/typingtest'" class="playBtn">Play</button>
+    <header>
+        <button onclick="window.location.href='/'" class="leftButton">Home</button>
+        <button onclick="window.location.href='/chillgames'" class="leftButton">Chill games</button>
+        <button onclick="window.location.href='/tryhardgames'" class="rightButton">Tryhard games</button>
+        <button onclick="window.location.href='/about'" class="rightButton">About</button>
+    </header>
+    <h1>Tryhard Games</h1>
+    <h2>Choose a game to play</h2>
+    <div class="gamesContainer">
+        <div class="game">
+            <h3>Typing Test</h3>
+            <img src="/img/typingtest.png" alt="TypingTest" class="gameImg">
+            <button onclick="window.location.href='/tryhardgames/typingtest'" class="playBtn">Play</button>
+        </div>
+        <div class="game">
+            <h3>Reaction Time</h3>
+            <img src="/img/reactiontime.png" alt="ReactionTime" class="gameImg">
+            <button onclick="window.location.href='/tryhardgames/reactiontime'" class="playBtn">Play</button>
+        </div>
     </div>
-    <div class="game">
-        <h3>Reaction Time</h3>
-        <img src="/img/eclaire.png" alt="ReactionTime" class="gameImg">
-        <button onclick="window.location.href='/reactiontime'" class="playBtn">Play</button>
-    </div>
-</div>
 </body>
 </html>

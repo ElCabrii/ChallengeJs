@@ -3,7 +3,8 @@ const accuracy = document.getElementById('accuracy');
 const timer = document.getElementById('timer');
 let textToType = document.getElementById('textToType');
 const textInput = document.getElementById('textInput');
-const header = document.getElementById('header');
+const gameEnd = document.getElementById('gameEnd');
+const finalWpm = document.getElementById('finalWpm');
 
 const RANDOM_TEXT_API = 'https://api.quotable.io/random';
 
@@ -33,21 +34,27 @@ async function renderTextToType(){
     textToType.innerText = texts.join(' ');
 }
 
+gameEnded = () => {
+    textInput.disabled = true;
+    timer.style.display = 'none';
+    container.style.display = 'none';
+    gameEnd.style.display = 'flex';
+    finalWpm.innerText = wpm.innerText;
+    textInput.value = '';
+}
+
 async function game(){
-    gameOver = false;
+    gameEnd.style.display = 'none';
+    container.style.display = 'flex';
+    timer.style.display = 'flex';
     textToType.innerText = "Loading...";
     let time = 60;
-    let words = textToType.innerText.split(' ');
     let i = 0;
     textInput.onfocus = () => {
         const interval = setInterval(() => {
             if (time === 0) {
                 clearInterval(interval);
-                textInput.disabled = true;
-                console.log('Game Over');
-                textInput.disabled = true;
-                wpm.innerText = Math.floor(correctWords.innerText.split(' ').length);
-                header.style.display = 'flex';
+                gameEnded();
             } else {
                 time -= 1;
 
@@ -56,6 +63,7 @@ async function game(){
         }, 1000);
     }
     await renderTextToType();
+    let words = textToType.innerText.split(' ');
     textInput.addEventListener('input', () => {
         let inputWord = textInput.value;
         let wordToType = words[i] + ' ';
@@ -63,12 +71,18 @@ async function game(){
         if (inputWord === wordToType) {
             textToType.innerText = textToType.innerText.slice(wordToType.length);
             textInput.value = '';
+            wpm.innerText ++;
             i++;
         }
         if (textToType.innerText === '') {
             textInput.disabled = true;
         }
+        if (i === words.length) {
+            clearInterval(interval)
+            gameEnded();
+        }
     });
+    restartButton.onclick = game;
 }
 
-game();
+window.onload = game;

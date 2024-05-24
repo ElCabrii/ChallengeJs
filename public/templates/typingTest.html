@@ -10,14 +10,25 @@
     <title>Typing Test | ChallengeJS</title>
 </head>
 <body>
-    <h1>Typing Test</h1>
+    <header>
+        <button onclick="window.location.href='/'" class="leftButton">Home</button>
+        <button onclick="window.location.href='/chillgames'" class="leftButton">Chill games</button>
+        <button onclick="window.location.href='/tryhardgames'" class="rightButton">Tryhard games</button>
+        <button onclick="window.location.href='/about'" class="rightButton">About</button>
+    </header>
     <div id="header">
-        <h2>WPM: <span id="wpm">0</span></h2>
+        <h1>Typing Test</h1>
     </div>
     <div id="container">
+        <h2>WPM: <span id="wpm">0</span></h2>
         <p id="textToType"></p>
         <input type="text" id="textInput" autocomplete="off" spellcheck="false">
     </div>
     <h2 id="timer">60</h2>
+    <div id="gameEnd">
+        <h2>Game Over</h2>
+        <h2>WPM: <span id="finalWpm">0</span></h2>
+        <button id="restartButton">Restart</button>
+    </div>
 </body>
 </html>
