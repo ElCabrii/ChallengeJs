@@ -18,15 +18,15 @@ app.get('/about', (req, res) => {
     res.sendFile(__dirname + '/public/templates/about.html')
 })
 
-app.get('/memorytest', (req, res) => {
+app.get('/tryhardgames/memorytest', (req, res) => {
     res.sendFile(__dirname + '/public/templates/memoryTest.html')
 })
 
-app.get('/reactiontime', (req, res) => {
+app.get('/tryhardgames/reactiontime', (req, res) => {
     res.sendFile(__dirname + '/public/templates/reactionTime.html')
 })
 
-app.get('/typingtest', (req, res) => {
+app.get('/tryhardgames/typingtest', (req, res) => {
     res.sendFile(__dirname + '/public/templates/typingTest.html')
 })
 app.get('/chillgames/snake', (req, res) => {
