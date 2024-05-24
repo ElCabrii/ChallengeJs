@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri à bulle</title>
+    <link rel="stylesheet" href= "/css/triABulle.css">
+</head>
+<body>
+     <header>
+            <button onclick="window.location.href='/'" class="leftButton">Home</button>
+            <button onclick="window.location.href='/chillgames'" class="leftButton">Chill games</button>
+            <button onclick="window.location.href='/tryhardgames'" class="rightButton">Tryhard games</button>
+            <button onclick="window.location.href='/about'" class="rightButton">About</button>
+        </header>
+    <h1>Tri à bulle</h1>
+    <div id="triabulle">
+        <button id="triButton" class="button">Tri</button>
+        <div>
+            <span class="tableau">Tableau non trié : </span>
+            <span id="unsortedArray" class="tableau"></span>
+        </div>
+        <div>
+            <span class="tableau">Tableau trié : </span>
+            <span id="sortedArray" class="tableau"></span>
+        </div>
+    </div>
+
+    <script src="/js/games/triABulle.js"></script>
+</body>
+</html>
