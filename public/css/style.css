@@ -7,7 +7,7 @@ body{
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    overflow-y: hidden;
+    overflow-y: hidden
 }
 
 h1{
@@ -81,6 +81,7 @@ div button:hover{
     font-weight: 700;
     font-style: normal;
     width: 250px;
+    scale: 95%;
 }
 
 .gameImg{
@@ -96,7 +97,7 @@ div button:hover{
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: transparent;
 }
@@ -124,4 +125,19 @@ header button:hover{
 
 .rightButton{
     color: #211951;
+}
+
+a{
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    color: #15F5BA;
+}
+
+a:hover{
+    color: #836FFF;
 }
