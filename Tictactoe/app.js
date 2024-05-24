@@ -75,11 +75,9 @@ const jouerCase = (e) => {
 
     let isVctoire = verifierVictoire();
 
+
     if (isVctoire === true) {
         // si victoire
-
-        alert("Le gagnant est le joueur " + state.joueurEnCours);
-
         if (state.joueurEnCours == 1) {
             state.scoreJ1++;
             score1.textContent = state.scoreJ1;
@@ -87,7 +85,7 @@ const jouerCase = (e) => {
             state.scoreJ2++;
             score2.textContent = state.scoreJ2;
         }
-
+        alert("Le gagnant est le joueur " + state.joueurEnCours);
         resetState();
         cases.forEach((c) => (c.textContent = ""));
     } else if (isVctoire === null) {
@@ -102,17 +100,17 @@ const jouerCase = (e) => {
         resetState();
         cases.forEach((c) => (c.textContent = ""));
     } else if (isVctoire === false) {
-        // sinon on continue le jeu
-        if (state.joueurEnCours == 1) {
-            state.joueurEnCours = 2;
-            e.target.textContent = "X";
-            joueur.textContent = "2";
-        } else {
-            state.joueurEnCours = 1;
-            e.target.textContent = "O";
-            joueur.textContent = "1";
-        }
+    // sinon on continue le jeu
+    if (state.joueurEnCours == 1) {
+        state.joueurEnCours = 2;
+        e.target.textContent = "X";
+        joueur.textContent = "2";
+    } else {
+        state.joueurEnCours = 1;
+        e.target.textContent = "O";
+        joueur.textContent = "1";
     }
+}
 };
 
 cases.forEach((el) => {

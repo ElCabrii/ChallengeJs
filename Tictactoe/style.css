@@ -29,6 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 3rem;
+
 }
 
 p {
@@ -38,4 +39,9 @@ p {
 
 p:first-of-type {
     color: lightseagreen;
+}
+.img {
+    width: 10px;
+    height: 10px;
+    margin: 1rem;
 }

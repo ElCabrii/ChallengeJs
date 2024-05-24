@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Page de Jeu</title>
-    <!-- Inclure votre fichier JavaScript -->
-    <script src="Game.js" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
-    <h1>Ma Page de Jeu</h1>
-    <p>Cliquez sur le bouton pour lancer le jeu :</p>
-    <button onclick="game()">Lancer le jeu</button>
+
+
+<div class="main">
+    <h1 class="title mb-4">JEU<span class="h4">→ ROULETTE</span></h1>
+	<div class="container-fluid">
+		<div class="row mt-3">
+			<div id="history" class="col-12">
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-12">
+			<input class='btn btn-primary' type="button" value="spin" id='spin' />
+				<canvas id="canvas" width="500"height="500">
+</canvas>
+			</div>
+		</div>
+	</div>
+</div>
+
 </body>
+<script src="Roue.js"></script>
 </html>
