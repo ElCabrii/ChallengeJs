@@ -82,6 +82,7 @@ async function game(){
             gameEnded();
         }
     });
+    restartButton.onclick = game;
 }
 
-window.onload = restartButton.onclick = game;
+window.onload = game;
