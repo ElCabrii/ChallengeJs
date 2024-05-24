@@ -31,7 +31,7 @@ p{
     text-align: center;
 }
 
-button{
+div button{
     background-color: #15F5BA;
     border-radius: 45px;
     height: 100px;
@@ -47,7 +47,7 @@ button{
     border: 5px solid #211951;
 }
 
-button:hover{
+div button:hover{
     background-color: #836FFF;
     color: #15F5BA;
 }
@@ -90,4 +90,33 @@ button:hover{
 
 .gameName{
     font-size: 30px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+header button{
+    background-color: transparent;
+    height: 50px;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border: none;
+}
+
+.leftButton{
+    color: #15F5BA;
+}
+
+.rightButton{
+    color: #211951;
 }
