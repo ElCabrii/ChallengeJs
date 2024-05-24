@@ -32,7 +32,15 @@ app.get('/tryhardgames/typingtest', (req, res) => {
 app.get('/chillgames/snake', (req, res) => {
     res.sendFile(__dirname + '/public/templates/snake.html')
 })
-
+app.get ('/chillgames/tictactoe', (req, res) => {
+    res.sendFile(__dirname + '/public/templates/tictactoe.html')
+})
+app.get('/tryhardgames/triabulle', (req, res) => {
+    res.sendFile(__dirname + '/public/templates/triABulle.html')
+})
+app.get('/chillgames/taptheyanis', (req, res) => {
+    res.sendFile(__dirname + '/public/templates/tapTheYanis.html')
+})
 
 app.use((req, res) => {
     res.status(404)
