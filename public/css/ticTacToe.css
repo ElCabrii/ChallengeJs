@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    margin: 2rem;
 }
 
 #grid {
@@ -38,10 +37,15 @@ p {
 }
 
 p:first-of-type {
-    color: lightseagreen;
+    color: #15F5BA;
 }
 .img {
     width: 10px;
     height: 10px;
     margin: 1rem;
+}
+
+h1{
+    margin-top: 30px;
+    margin-bottom: 50px;
 }

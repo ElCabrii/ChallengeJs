@@ -1,8 +1,8 @@
 body{
     display : flex;
+    flex-direction: column;
     justify-content : center;
     align-items : center;
-    height : 100vh;
     background-position: center;
     background-size: cover;
 }
@@ -34,16 +34,6 @@ body{
     width: 60px;
     transition: 0.25s;
     animation: animateTarget 10s infinite;
-}
-
-button{
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: 0;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-bottom: 20px;
 }
 
 @keyframes animateTarget {
