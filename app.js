@@ -42,6 +42,11 @@ app.get('/chillgames/taptheyanis', (req, res) => {
     res.sendFile(__dirname + '/public/templates/tapTheYanis.html')
 })
 
+app.get('/chillgames/memorygame', (req, res) => {
+    res.sendFile(__dirname + '/public/templates/memoryGame.html')
+
+})
+
 app.use((req, res) => {
     res.status(404)
     res.sendFile(__dirname + '/public/templates/404.html')
