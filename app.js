@@ -47,6 +47,11 @@ app.get('/chillgames/memorygame', (req, res) => {
 
 })
 
+app.get('/tryhardgames/blackjack', (req, res) => {
+    res.sendFile(__dirname + '/public/templates/blackjack.html')
+
+})
+
 app.use((req, res) => {
     res.status(404)
     res.sendFile(__dirname + '/public/templates/404.html')
