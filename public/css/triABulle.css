@@ -17,3 +17,7 @@
     justify-content: center;
     align-items: center;
 }
+.moving{
+    color: rgb(255, 0, 0);
+    font-size: 50px;
+}
