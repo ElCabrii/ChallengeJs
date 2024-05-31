@@ -1,10 +1,18 @@
 let randomNumbers = [];
 let sortedNumbers = [];
 let currentIndices = [];
+let sortedIndices = [];
+let arraySize = 10; // Default array size
+
+function changeArraySize() {
+    arraySize = parseInt(document.getElementById('arraySize').value);
+    generateRandomNumbers();
+}
 
 function generateRandomNumbers() {
     randomNumbers = [];
-    for (let i = 0; i < 100; i++) {
+    sortedIndices = []; // Reset sorted indices
+    for (let i = 0; i < arraySize; i++) {
         randomNumbers.push(Math.floor(Math.random() * 100));
     }
     sortedNumbers = randomNumbers.slice(); // Initialize sortedNumbers with the generated random numbers
@@ -24,12 +32,14 @@ function bubbleSortWithDelay(arr) {
                 }
                 j++;
             } else {
+                sortedIndices.push(n - 1 - i); // Mark the current element as sorted
                 j = 0;
                 i++;
             }
             updateUI();
             setTimeout(sortStep, 25); // Adjust the delay as needed
         } else {
+            sortedIndices.push(0); // Mark the last remaining element as sorted
             currentIndices = [];
             updateUI();
         }
@@ -43,10 +53,11 @@ function sort() {
 
 function updateUI() {
 
-
     const sortedArrayElements = sortedNumbers.map((num, index) => {
         if (currentIndices.includes(index)) {
             return `<span class="moving">${num}</span>`;
+        } else if (sortedIndices.includes(index)) {
+            return `<span class="sorted">${num}</span>`;
         } else {
             return num;
         }
@@ -55,12 +66,12 @@ function updateUI() {
     document.getElementById('sortedArray').innerHTML = sortedArrayElements.join(', ');
 }
 
-// Add event listener to the button
+// Add event listener to the button and input
 document.getElementById('triButton').addEventListener('click', sort);
+document.getElementById('arraySize').addEventListener('input', changeArraySize);
 
-// Add CSS for the moving class
+// Add CSS for the moving and sorted classes
 const style = document.createElement('style');
-
 document.head.appendChild(style);
 
 // Generate random numbers and update UI when the page loads
