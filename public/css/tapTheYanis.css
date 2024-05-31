@@ -1,43 +1,45 @@
-body{
-    display : flex;
-    flex-direction: column;
-    justify-content : center;
-    align-items : center;
-    background-position: center;
-    background-size: cover;
-}
-
 .game_infos {
     display : flex;
     justify-content: space-between;
     margin: 20px;
+    padding: 20px;
+    background-color: #211951;
+    border-radius: 20px;
+    border: 5px solid #15F5BA;
+    color: #F0F3FF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
+}
+.games{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
 }
 
-.container {
-    height: 400px;
-    width: 500px;
-    border: 1px solid #999;
-    cursor: crosshair;
-    positon: relative;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aliceblue;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    overflow: hidden;
-}
 #target {
     position: absolute;
     height: 60px;
     width: 60px;
     transition: 0.25s;
     animation: animateTarget 10s infinite;
+    cursor: crosshair;
 }
 
 @keyframes animateTarget {
     to {
-        transform: translateY(-200px) rotate(90deg);
+        transform: translateY(-500px) rotate(90deg);
     }
+}
+
+.container {
+    display : flex;
+    justify-content: center;
+    border-radius: 20px;
+    color: #F0F3FF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
 }
