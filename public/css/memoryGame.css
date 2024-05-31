@@ -23,13 +23,6 @@ body{
     background: transparent;
 }
 
-#buttons{
-    width: 700px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
 .card{
     display: flex;
     justify-content: center;
@@ -43,4 +36,10 @@ body{
 h2{
     margin-top: -5px;
     margin-bottom: -5px;
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
