@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#game{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 400px;
+    background: transparent;
+}
+
+#buttons{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 102px;
+    margin: 5px;
+
+}
+
+h2{
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
