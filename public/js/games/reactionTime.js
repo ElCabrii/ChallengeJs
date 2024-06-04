@@ -1,21 +1,35 @@
-const gameArea = document.getElementById('gameArea');
-const startButton = document.getElementById('startButton');
-let startTime;
-let endTime;
+document.addEventListener("DOMContentLoaded", function () {
+  const startButton = document.getElementById("startButton");
+  const reactionBox = document.getElementById("reactionBox");
+  const result = document.getElementById("result");
 
-function startGame() {
-  gameArea.innerHTML = '';
-  startButton.style.display = 'none';
-  setTimeout(() => {
-    gameArea.style.backgroundColor = 'red';
+  let startTime;
+  let timeout;
+
+  startButton.addEventListener("click", startGame);
+  reactionBox.addEventListener("click", recordReaction);
+
+  function startGame() {
+    result.textContent = "";
+    reactionBox.style.display = "none";
+    startButton.style.display = "none";
+
+    const randomDelay = Math.random() * 3000 + 2000; // Delay between 2 and 5 seconds
+    timeout = setTimeout(showReactionBox, randomDelay);
+  }
+
+  function showReactionBox() {
     startTime = Date.now();
-  }, Math.random() * 2000 + 1000);
-}
+    reactionBox.style.display = "block";
+    reactionBox.addEventListener("click", recordReaction);
+  }
 
-function endGame() {
-  endTime = Date.now();
-  const reactionTime = endTime - startTime;
-  gameArea.innerHTML = `Your reaction time is ${reactionTime}ms`;
-  gameArea.style.backgroundColor = 'white';
-  startButton.style.display = 'block';
-}
+  function recordReaction() {
+    const reactionTime = Date.now() - startTime;
+    result.textContent = `Temps de réaction: ${reactionTime} ms`;
+    reactionBox.style.display = "none";
+    startButton.style.display = "block";
+    clearTimeout(timeout);
+    reactionBox.removeEventListener("click", recordReaction);
+  }
+});
