@@ -2,21 +2,34 @@ let container = document.querySelector('.container')
 let btn = document.querySelector('.start_btn');
 let scoreContainer = document.querySelector('.score');
 let timeContainer = document.querySelector('.time');
-
+let score  ;
+let time ;
+let viewportWidth = window.innerWidth  ;
+let viewportHeight = window.innerHeight;
 btn.onclick = function () {
-    let score = 0;
-    let time = 10;
+    score = 0;
+    time = 25;
     container.innerHTML = '';
 
-    let interval = setInterval(function showTarget () {
-            let target = document.createElement('img');
-            target.id='target';
-            target.src="/img/target.png";
-            container.appendChild(target);
-            target.style.top = Math.random() * (900 - target.offsetHeight) + 'px';
-            target.style.left = Math.random() * (900 - target.offsetWidth) + 'px';
+    let interval = setInterval(function showTarget() {
+        let target = document.createElement('img');
+        target.id = 'target';
+        target.src = "/img/target.png";
+        target.style.position = 'absolute'; // Ensure the target is absolutely positioned
+        container.appendChild(target);
 
-            setTimeout(function () {
+        // Get the viewport dimensions
+
+
+        // Set the target's position to random values within the viewport dimensions
+        target.style.top = Math.random() * viewportHeight  + 'px';
+        target.style.left = Math.random() * viewportWidth  +'px';
+   // Adjust the interval time as needed
+
+
+
+
+    setTimeout(function () {
                 target.remove();
             }, 2000);
 
@@ -26,8 +39,8 @@ btn.onclick = function () {
             }
             time-=1;
 
-            scoreContainer.innerHTML = 'Score: ${score}';
-            timeContainer.innerHTML = 'Time: ${time}';
+            scoreContainer.innerHTML = 'Score:' + score;
+            timeContainer.innerHTML = 'Time: ' + time;
 
             if (time === 0) {
                 clearInterval(interval);

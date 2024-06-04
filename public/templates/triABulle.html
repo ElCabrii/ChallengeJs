@@ -15,15 +15,21 @@
             <button onclick="window.location.href='/tryhardgames'" class="rightButton">Tryhard games</button>
             <button onclick="window.location.href='/about'" class="rightButton">About</button>
         </header>
-    <h1>Tri à bulle</h1>
+    <h1>Bubble sorted</h1>
     <div id="triabulle">
-        <button id="triButton" class="button">Tri</button>
         <div>
-            <span class="tableau">Tableau non trié : </span>
+
+            <input type="number" id="arraySize" name="arraySize" min="1" max="100" value="10">
+
+        </div>
+        <button id="triButton" class="button">Sort</button>
+
+        <div>
+            <span class="tableau"></span>
             <span id="unsortedArray" class="tableau"></span>
         </div>
         <div>
-            <span class="tableau">Tableau trié : </span>
+            <span class="tableau"></span>
             <span id="sortedArray" class="tableau"></span>
         </div>
     </div>
