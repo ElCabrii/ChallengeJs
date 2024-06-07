@@ -35,8 +35,8 @@ app.get('/chillgames/snake', (req, res) => {
 app.get ('/chillgames/tictactoe', (req, res) => {
     res.sendFile(__dirname + '/public/templates/tictactoe.html')
 })
-app.get('/tryhardgames/triabulle', (req, res) => {
-    res.sendFile(__dirname + '/public/templates/triABulle.html')
+app.get('/tryhardgames/bubblesort', (req, res) => {
+    res.sendFile(__dirname + '/public/templates/bubbleSort.html')
 })
 app.get('/chillgames/taptheyanis', (req, res) => {
     res.sendFile(__dirname + '/public/templates/tapTheYanis.html')
