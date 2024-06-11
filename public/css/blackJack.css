@@ -1,0 +1,34 @@
+.playerCards, .dealerCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.playerScore, .dealerScore {
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+.table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
