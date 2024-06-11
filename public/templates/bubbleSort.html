@@ -15,16 +15,13 @@
             <button onclick="window.location.href='/tryhardgames'" class="rightButton">Tryhard games</button>
             <button onclick="window.location.href='/about'" class="rightButton">About</button>
         </header>
-    <h1>Bubble sort</h1>
-    <div id="triabulle">
+    <h1>Bubble sorted</h1>
+    <div id="bubbleSort">
         <div>
-            <div class="numInputContainer">
-                <span class="next" onclick="nextNum()"></span>
-                <span class="prev" onclick="prevNum()"></span>
-                <div id="box"></div>
-            </div>
-            <button id="triButton" class="button" onclick="sort()">Sort</button>
+            <input type="number" id="arraySize" name="arraySize" min="1" max="100" value="10">
+            <button id="triButton" class="button">Sort</button>
         </div>
+
         <div>
             <span class="tableau"></span>
             <span id="unsortedArray" class="tableau"></span>
@@ -34,5 +31,7 @@
             <span id="sortedArray" class="tableau"></span>
         </div>
     </div>
+
+    <script src="/js/games/bubbleSort.js"></script>
 </body>
 </html>
