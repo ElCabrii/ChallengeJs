@@ -11,7 +11,7 @@ let cards = [
     { name: 'J', value: 10 },
     { name: 'Q', value: 10 },
     { name: 'K', value: 10 },
-    { name: 'A', value: 1, altValue: 11 }
+    { name: 'A', value: 11, altValue: 1 }
 ];
 
 let deck = [];
@@ -24,19 +24,31 @@ let gameOver = false;
 let playerMoney = 1000; // Initial amount of money the player has
 
 function createCardElement(card, parentElementId) {
-    let cardElement = document.createElement('div');
-    cardElement.classList.add('card');
-    let cardText = document.createTextNode(card.name + ' ' + card.value);
-    cardElement.appendChild(cardText);
+    let cardContainer = document.createElement('div');
+    cardContainer.classList.add('card-container');
+
+    let cardImage = document.createElement('img');
+    cardImage.classList.add('card');
+    cardImage.src = `/img/blackJack/${card.name}.png`; // Change this to the correct path
+    cardImage.alt = card.name;
+    cardContainer.appendChild(cardImage);
+
+    let cardValue = document.createElement('span');
+    cardValue.classList.add('card-value');
+    cardValue.textContent = card.name === 'A' ? 'A' : card.value; // Use card.name instead of card.value for Aces
+    cardContainer.appendChild(cardValue);
+
     let parentElement = document.getElementById(parentElementId);
-    parentElement.appendChild(cardElement);
+    parentElement.appendChild(cardContainer);
 }
+
+
 
 function createDeck() {
     deck = [];
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < cards.length; j++) {
-            deck.push(cards[j]);
+            deck.push({ ...cards[j] });
         }
     }
 }
@@ -58,14 +70,18 @@ function calculateScore(hand) {
     let score = 0;
     let aces = 0;
     for (let i = 0; i < hand.length; i++) {
-        score += hand[i].value;
         if (hand[i].name === 'A') {
             aces++;
+        } else {
+            score += hand[i].value;
         }
     }
-    while (score > 21 && aces > 0) {
-        score -= 10;
-        aces--;
+    for (let i = 0; i < aces; i++) {
+        if (score + 11 <= 21) {
+            score += 11;
+        } else {
+            score += 1;
+        }
     }
     return score;
 }
@@ -115,7 +131,7 @@ function hit() {
 function stand() {
     if (playerTurn && !gameOver) {
         playerTurn = false;
-        while (dealerScore < 17) {
+        while (dealerScore <= 17) {
             let card = dealCard();
             dealerHand.push(card);
             dealerScore = calculateScore(dealerHand);
@@ -131,8 +147,6 @@ function stand() {
             let result = checkWin(playerScore, dealerScore, playerHand, dealerHand);
             alert(result);
         }
-        // Update the displayed player money
-        document.querySelector('.playerMoney').textContent = `Player Money: ${playerMoney}`;
     }
 }
 
@@ -180,6 +194,8 @@ function startGame() {
     dealerScore = calculateScore(dealerHand);
     if (checkBlackJack(playerScore) || checkBlackJack(dealerScore)) {
         gameOver = true;
+        let result = checkWin(playerScore, dealerScore, playerHand, dealerHand);
+        alert(result);
     }
 
     // Display the initial scores
@@ -192,5 +208,4 @@ module.exports = {
     stand,
     getGameInfo,
     startGame,
-    playerMoney
 };
