@@ -1,14 +1,34 @@
 #gameArea {
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
 }
-#startButton, #reactionBox {
+#startButton{
     padding: 20px;
     margin: 10px;
     font-size: 20px;
     cursor: pointer;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 50px;
 }
 #reactionBox {
-    display: none;
+    display: none; /* Masque la boîte par défaut */
+    position: fixed; /* Permet à la boîte de s'étendre sur toute la fenêtre */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: #4CAF50;
     color: white;
+    justify-content: center; /* Centre le contenu horizontalement */
+     /* Centre le contenu verticalement */
+    z-index: 9999; /* Place la boîte au-dessus des autres éléments */+
+    text-align: auto;
+    font-size: 100px;
 }
