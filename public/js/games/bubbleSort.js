@@ -2,44 +2,10 @@ let randomNumbers = [];
 let sortedNumbers = [];
 let currentIndices = [];
 let sortedIndices = [];
-
-let inputNumbers = document.getElementById('box');
-
-
-for (let i = 0; i < 100; i++) {
-    let span = document.createElement('span');
-    span.id = 'num';
-    span.textContent = i;
-    inputNumbers.appendChild(span);
-}
-let inputNum = inputNumbers.getElementsByTagName('span');
-let index = 50;
-arraySize = document.getElementById('num').value;
-
-// Generate random numbers and update UI when the page loads
-window.onload = generateRandomNumbers;
-
-// Add CSS for the moving and sorted classes
-const style = document.createElement('style');
-document.head.appendChild(style);
-
-
-function nextNum(){
-    inputNum[index].style.display = 'none';
-    index = (index+1) % inputNum.length;
-    inputNum[index].style.display = 'initial';
-    changeArraySize();
-}
-
-function prevNum(){
-    inputNum[index].style.display = 'none';
-    index = (index-1+inputNum.length) % inputNum.length;
-    inputNum[index].style.display = 'initial';
-    changeArraySize();
-}
+let arraySize = 10; // Default array size
 
 function changeArraySize() {
-    arraySize = document.getElementById('num').value;
+    arraySize = parseInt(document.getElementById('arraySize').value);
     generateRandomNumbers();
 }
 
@@ -71,7 +37,7 @@ function bubbleSortWithDelay(arr) {
                 i++;
             }
             updateUI();
-            setTimeout(sortStep, 10); // Adjust the delay as needed
+            setTimeout(sortStep, 1/arraySize*1000); // Adjust the delay as needed
         } else {
             sortedIndices.push(0); // Mark the last remaining element as sorted
             currentIndices = [];
@@ -99,3 +65,14 @@ function updateUI() {
 
     document.getElementById('sortedArray').innerHTML = sortedArrayElements.join(', ');
 }
+
+// Add event listener to the button and input
+document.getElementById('triButton').addEventListener('click', sort);
+document.getElementById('arraySize').addEventListener('input', changeArraySize);
+
+// Add CSS for the moving and sorted classes
+const style = document.createElement('style');
+document.head.appendChild(style);
+
+// Generate random numbers and update UI when the page loads
+window.onload = generateRandomNumbers;
