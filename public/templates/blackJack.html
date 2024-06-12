@@ -16,8 +16,24 @@
             <button onclick="window.location.href='/about'" class="rightButton">About</button>
         </header>
 
-    <div class="jack">
-        <scrypt src="/js/games/blackJack.js"></scrypt>
+        <div class="table">
+            <div class="player">
+                <h2>Player</h2>
+                <div id="playerCards" class="playerCards"></div>
+                <div class="playerScore"></div>
+            </div>
+            <div class="dealer">
+                <h2>Dealer</h2>
+                <div id="dealerCards" class="dealerCards"></div>
+                <div class="dealerScore"></div>
+            </div>
+            <div class="buttons">
+                <button class="deck" onclick="startGame()">Start</button>
+                <button class="hit" onclick="hit()">Hit</button>
+                <button class="stand" onclick="stand()">Stand</button>
+            </div>
         </div>
-        </body>
+
+        <script src="/js/games/blackJack.js"></script>
+    </body>
 </html>
