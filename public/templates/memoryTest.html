@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Test | ChallengeJS</title>
+    <link rel="stylesheet" type ="text/css" href="/css/style.css">
+    <link rel="stylesheet" type ="text/css" href="/css/memoryTest.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script src="/js/games/memoryTest.js" defer></script>
+</head>
+<body>
+    <header>
+        <button onclick="window.location.href='/'" class="leftButton">Home</button>
+        <button onclick="window.location.href='/chillgames'" class="leftButton">Chill games</button>
+        <button onclick="window.location.href='/tryhardgames'" class="rightButton">Tryhard games</button>
+        <button onclick="window.location.href='/about'" class="rightButton">About</button>
+    </header>
+    <h1>Memory Test</h1>
+    <div class="stats">
+        <h3>Score : <span id="score">0</span></h3>
+        <h3>Mistakes : <span id="mistakes">0</span></h3>
+    </div>
+    <div id="tiles"></div>
+    <div id="gameOver">
+        <h2>Game Over</h2>
+        <h3>Your score is <span id="finalScore">0</span></h3>
+        <button onclick="window.location.reload()">Play again</button>
+    </div>
+</body>
+</html>

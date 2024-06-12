@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+    color : #F0F3FF;
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    margin-top: -15px;
+}
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    width: 25vw;
+    justify-content: space-around;
+}
+
+#tiles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 60vh;
+    height: 60vh;
+    background: transparent;
+}
+
+.tile{
+    background-color: #211951;
+    border: 5px solid #15F5BA;
+    border-radius: 20px;
+    color: #F0F3FF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 5vh;
+    cursor: pointer;
+}
+
+.right{
+    background-color: #15F5BA;
+}
+
+#gameOver{
+    display: none;
+}
