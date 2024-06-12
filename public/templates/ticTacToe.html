@@ -23,6 +23,7 @@
          <button id="modePvP">PvP</button>
         <button id="modePvE">PvE</button>
      </div>
+     <h3>Current mode : <span id="currentMode">PvP</span></h3>
      <div id="grid">
         <div id="c1" class="case"></div>
         <div id="c2" class="case"></div>
@@ -35,11 +36,16 @@
         <div id="c9" class="case"></div>
     </div>
     <div id="score">
-        <p>Player <span id="joueur">1</span>'s turn</p>
+        <p id="playerTurn">Player <span id="joueur">1</span>'s turn</p>
         <p>Player 1 : <span id="score1">0</span></p>
         <p>Player 2 : <span id="score2">0</span></p>
         <p>Draws : <span id="scoreNul">0</span></p>
     </div>
+     <div id="gameOver">
+         <h2>Game Over</h2>
+         <h3>Player <span id="winner"></span> wins !</h3>
+         <button onclick="window.location.reload()">Play again</button>
+     </div>
     <script src="/js/games/ticTacToe.js"></script>
 </body>
 

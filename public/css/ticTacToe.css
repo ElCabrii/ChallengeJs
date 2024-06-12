@@ -50,13 +50,28 @@ h1{
     margin-bottom: 50px;
 }
 
+h2{
+    margin-top: 30px;
+
+}
+
+h3{
+    margin-top: 30px;
+    color : #F0F3FF;
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+}
+
 #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9 {
     color: white;
 }
 
 #button{
-    height: 150px;
-    width: 500px;
-    align-items: center;
-    justify-content: center;
+    margin-top: -60px;
+    margin-bottom: -60px;
+}
+
+#gameOver {
+    display: none;
 }

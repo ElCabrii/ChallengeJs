@@ -13,10 +13,14 @@ let modePvEButton = document.getElementById("modePvE");
 // Ajoutez des gestionnaires d'événements aux boutons de mode
 modePvPButton.addEventListener("click", function() {
     mode = "PvP";
+    document.getElementById("currentMode").innerText = "PvP";
+    document.getElementById("playerTurn").style.display = 'block';
     resetState(); // Réinitialisez l'état du jeu lorsque le mode change
 });
 modePvEButton.addEventListener("click", function() {
     mode = "PvE";
+    document.getElementById("currentMode").innerText = "PvE";
+    document.getElementById("playerTurn").style.display = 'none';
     resetState(); // Réinitialisez l'état du jeu lorsque le mode change
 });
 
@@ -73,7 +77,7 @@ const makeComputerMove = () => {
 };
 const handleGameEnd = (result) => {
     if (result === true) {
-        alert("Le gagnant est le joueur " + state.joueurEnCours);
+        endGame();
         state['scoreJ' + state.joueurEnCours]++;
         updateScores();
     } else if (result === null) {
@@ -105,3 +109,10 @@ const jouerCase = (e) => {
 cases.forEach(el => el.addEventListener("click", jouerCase));
 updateScores();
 resetState();
+
+function endGame(){
+    document.getElementById("grid").style.display = 'none';
+    document.getElementById("score").style.display = 'none';
+    document.getElementById('winner').innerText = state.joueurEnCours;
+    gameOver.style.display = 'block';
+}
