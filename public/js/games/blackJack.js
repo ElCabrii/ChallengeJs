@@ -99,17 +99,17 @@ function checkWin(playerScore, dealerScore, playerHand, dealerHand) {
     let dealerBlackjack = checkBlackJack(dealerScore) && dealerHand.length === 2;
 
     if (playerBlackjack && dealerBlackjack) {
-        return 'Both Player and Dealer have Blackjack! It\'s a Tie!';
+        return 'No one';
     } else if (playerBlackjack) {
-        return 'Player has Blackjack! You Win!';
+        return 'Player';
     } else if (dealerBlackjack) {
-        return 'Dealer has Blackjack! You Lose!';
+        return 'Dealer';
     } else if (playerScore > dealerScore) {
-        return 'You Win!';
+        return 'Player';
     } else if (playerScore < dealerScore) {
-        return 'You Lose!';
+        return 'Dealer';
     } else {
-        return 'It\'s a Tie!';
+        return 'No one';
     }
 }
 
@@ -121,10 +121,10 @@ function hit() {
         createCardElement(card, 'playerCards');
         if (checkBust(playerScore)) {
             gameOver = true;
-            alert('Player Busts! You Lose!');
+            endGame('Dealer')
         }
         // Update the displayed score
-        document.querySelector('.playerScore').textContent = `Player Score: ${playerScore}`;
+        document.getElementById('playerScore1').innerText = `Player Score: ${playerScore}`;
     }
 }
 
@@ -139,13 +139,13 @@ function stand() {
         }
         gameOver = true;
         // Display the result
-        document.querySelector('.playerScore').textContent = `Player Score: ${playerScore}`;
-        document.querySelector('.dealerScore').textContent = `Dealer Score: ${dealerScore}`;
+        document.getElementById('playerScore1').innerText = `Player Score: ${playerScore}`;
+        document.getElementById('dealerScore1').innerText = `Dealer Score: ${dealerScore}`;
         if (checkBust(dealerScore)) {
-            alert('Dealer Busts! You Win!');
+            endGame('Player')
         } else {
             let result = checkWin(playerScore, dealerScore, playerHand, dealerHand);
-            alert(result);
+            endGame(result)
         }
     }
 }
@@ -160,19 +160,8 @@ function resetGame() {
     gameOver = false;
     document.getElementById('playerCards').innerHTML = '';
     document.getElementById('dealerCards').innerHTML = '';
-    document.querySelector('.playerScore').textContent = '';
-    document.querySelector('.dealerScore').textContent = '';
-}
-
-function getGameInfo() {
-    return {
-        playerHand: playerHand,
-        dealerHand: dealerHand,
-        playerScore: playerScore,
-        dealerScore: dealerScore,
-        playerTurn: playerTurn,
-        gameOver: gameOver
-    };
+    document.getElementById('playerScore1').innerText = '';
+    document.getElementById('dealerScore1').innerText = '';
 }
 
 function startGame() {
@@ -195,17 +184,26 @@ function startGame() {
     if (checkBlackJack(playerScore) || checkBlackJack(dealerScore)) {
         gameOver = true;
         let result = checkWin(playerScore, dealerScore, playerHand, dealerHand);
-        alert(result);
+        endGame(result);
     }
 
     // Display the initial scores
-    document.querySelector('.playerScore').textContent = `Player Score: ${playerScore}`;
-    document.querySelector('.dealerScore').textContent = `Dealer Score: ${dealerScore}`;
+    document.getElementById('playerScore1').innerText = `Player Score: ${playerScore}`;
+    document.getElementById('dealerScore1').innerText = `Dealer Score: ${dealerScore}`;
 }
 
-module.exports = {
-    hit,
-    stand,
-    getGameInfo,
-    startGame,
-};
+
+function endGame(winner){
+    document.getElementById("table").style.display = 'none';
+    document.getElementById('winner').innerText = winner;
+    if (winner === 'No one'){
+        document.getElementById('results').innerText+='It\'s a tie!';
+    }
+    document.getElementById('playerScore2').innerText = playerScore;
+    document.getElementById('dealerScore2').innerText = dealerScore;
+    document.getElementById('gameOver').style.display = 'flex';
+}
+
+window.onload = () => {
+    startGame();
+}
