@@ -14,6 +14,18 @@ TEAM
 - Nicolas Nguyen Van Thanh
 - Ismail Benlaidi
 
+CONTENT
+--------------------------------
+- Tic Tac Toe
+- Bubble Sort
+- Tap the Yanis
+- BlackJack
+- Snake
+- Reaction Time
+- Memory Game
+- Memory Test
+- Typing Test
+
 OBJECTIVES
 --------------------------------
 - Develop coding skills, mainly in JavaScript, NodeJS and Express which are new to us.
